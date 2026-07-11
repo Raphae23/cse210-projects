@@ -21,7 +21,6 @@ namespace JournalProgram
             _entries.Add(newEntry);
         }
 
-        // DisplayAll() : void
         public void DisplayAll()
         {
             if (_entries.Count == 0)
