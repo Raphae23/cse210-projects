@@ -46,7 +46,7 @@ namespace JournalProgram
         private static void ShowMenu()
         {
             Console.WriteLine();
-            Console.WriteLine("Journal Program");
+            Console.WriteLine("Welcome to my Journal Program");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display the journal");
             Console.WriteLine("3. Save the journal to a file");
