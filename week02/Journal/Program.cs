@@ -2,7 +2,7 @@ using System;
 
 namespace JournalProgram
 {
-    // I added a feature that saves other information in the journal entry.
+    // I added a feature that saves other information in the journal entry. It requests other info from the user.
     class Program
     {
         static void Main(string[] args)
