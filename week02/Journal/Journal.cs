@@ -90,21 +90,33 @@ namespace JournalProgram
 
                     var parts = line.Split(new string[] { Separator }, StringSplitOptions.None);
 
-                    if (parts.Length >= 3)
+                   if (parts.Length >= 3)
                     {
                         string date = parts[0];
                         string prompt = parts[1];
                         string entryText = parts[2];
-                        if (parts.Length > 3)
+                        string otherInfo = "";
+
+                        if (parts.Length == 3)
                         {
-                            for (int i = 3; i < parts.Length; i++)
+                            otherInfo = "";
+                        }
+                        else
+                        {
+                            otherInfo = parts[3];
+                            if (parts.Length > 4)
                             {
-                                entryText += Separator + parts[i];
+                                for (int i = 4; i < parts.Length; i++)
+                                {
+                                    otherInfo += Separator + parts[i];
+                                }
                             }
                         }
-                        entryText = entryText.Replace("\\n", Environment.NewLine);
 
-                        var entry = new Entry(date, prompt, entryText);
+                        entryText = entryText.Replace("\\n", Environment.NewLine);
+                        otherInfo = otherInfo.Replace("\\n", Environment.NewLine);
+
+                        var entry = new Entry(date, prompt, entryText, otherInfo);
                         loaded.Add(entry);
                     }
                     else

@@ -2,6 +2,9 @@ using System;
 
 namespace JournalProgram
 {
+    // I added a feature that saves other information in the journal entry.
+    // I added an "OtherInfo" field to Entry and updated save/load/display so the journal can store
+    // and restore additional one-line information (e.g., mood, tags, location). Program now prompts
     class Program
     {
         static void Main(string[] args)
@@ -61,9 +64,11 @@ namespace JournalProgram
             Console.WriteLine($"Prompt: {prompt}");
             Console.Write("Your response: ");
             string response = ReadMultilineInput();
+            Console.Write("Any other information to save (e.g., mood, tags, location)? Press Enter to skip: ");
+            string otherInfo = Console.ReadLine() ?? "";
             string date = DateTime.Now.ToString("yyyy-MM-dd");
 
-            var entry = new Entry(date, prompt, response);
+            var entry = new Entry(date, prompt, response, otherInfo);
             journal.AddEntry(entry);
             Console.WriteLine("Entry added.");
         }
