@@ -3,8 +3,6 @@ using System;
 namespace JournalProgram
 {
     // I added a feature that saves other information in the journal entry.
-    // I added an "OtherInfo" field to Entry and updated save/load/display so the journal can store
-    // and restore additional one-line information (e.g., mood, tags, location). Program now prompts
     class Program
     {
         static void Main(string[] args)
